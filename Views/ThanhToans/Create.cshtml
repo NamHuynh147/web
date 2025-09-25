@@ -1,0 +1,53 @@
+﻿@model WebBanXeMay.Models.ThanhToan
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ThanhToan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IDDatHang" class="control-label"></label>
+                <input asp-for="IDDatHang" class="form-control" />
+                <span asp-validation-for="IDDatHang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDPhuongThucThanhToan" class="control-label"></label>
+                <input asp-for="IDPhuongThucThanhToan" class="form-control" />
+                <span asp-validation-for="IDPhuongThucThanhToan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaThanhToan" class="control-label"></label>
+                <input asp-for="DaThanhToan" class="form-control" />
+                <span asp-validation-for="DaThanhToan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TienDaThanhToan" class="control-label"></label>
+                <input asp-for="TienDaThanhToan" class="form-control" />
+                <span asp-validation-for="TienDaThanhToan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NgayThanhToan" class="control-label"></label>
+                <input asp-for="NgayThanhToan" class="form-control" />
+                <span asp-validation-for="NgayThanhToan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

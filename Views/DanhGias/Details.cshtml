@@ -1,0 +1,49 @@
+﻿@model WebBanXeMay.Models.DanhGia
+
+@{
+    ViewData["Title"] = "Details";
+    Layout ="_Layout";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DanhGia</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IDNguoiDung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IDNguoiDung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IDXe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IDXe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IDDatHang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IDDatHang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DiemDanhGia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DiemDanhGia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BinhLuan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BinhLuan)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IDDanhGia">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,76 @@
+﻿@model WebBanXeMay.Models.NguoiDung
+
+@{
+    ViewData["Title"] = "Đăng ký tài khoản";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<div class="registration-container">
+
+
+<div class="row">
+    <div class="col-md-4">
+        <!-- Form posts to the Create() action in NguoiDungController -->
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Username -->
+            <div class="form-group">
+                <label asp-for="TenDangNhap" class="control-label"></label>
+                <input asp-for="TenDangNhap" class="form-control" />
+                <span asp-validation-for="TenDangNhap" class="text-danger"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label asp-for="MatKhau" class="control-label"></label>
+                <input asp-for="MatKhau" type="password" class="form-control" />
+                <span asp-validation-for="MatKhau" class="text-danger"></span>
+            </div>
+
+            <!-- Full Name -->
+            <div class="form-group">
+                <label asp-for="HoTen" class="control-label"></label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label asp-for="SDT" class="control-label"></label>
+                <input asp-for="SDT" class="form-control" />
+                <span asp-validation-for="SDT" class="text-danger"></span>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label asp-for="DiaChi" class="control-label"></label>
+                <input asp-for="DiaChi" class="form-control" />
+                <span asp-validation-for="DiaChi" class="text-danger"></span>
+            </div>
+
+            <!-- Citizen ID -->
+            <div class="form-group">
+                <label asp-for="CCCD" class="control-label"></label>
+                <input asp-for="CCCD" class="form-control" />
+                <span asp-validation-for="CCCD" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Đăng ký" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

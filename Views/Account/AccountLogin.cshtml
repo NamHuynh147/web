@@ -1,0 +1,32 @@
+﻿@model WebBanXeMay.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Đăng Nhập";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label asp-for="Username" class="form-label">Tên đăng nhập</label>
+        <input asp-for="Username" class="form-control" placeholder="Nhập tên đăng nhập của bạn" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" type="password" class="form-control" placeholder="Nhập Mật Khẩu" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-check">
+        <input asp-for="RememberMe" class="form-check-input" />
+        <label asp-for="RememberMe" class="form-check-label"></label>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Đăng Nhập</button>
+</form>
+
+@section Scripts {
+    <!-- This partial loads jQuery validation scripts if you're using them -->
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
